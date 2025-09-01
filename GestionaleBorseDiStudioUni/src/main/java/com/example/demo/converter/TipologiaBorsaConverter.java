@@ -1,11 +1,14 @@
 package com.example.demo.converter;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.dto.TipologiaBorsaDto;
 import com.example.demo.entity.TipologiaBorsa;
 
+@Component
 public class TipologiaBorsaConverter {
 	
-	public TipologiaBorsaDto toEntity(TipologiaBorsa input) {
+	public TipologiaBorsaDto toDto(TipologiaBorsa input) {
 	if (input == null) {
 		return null;
 	}
@@ -18,7 +21,7 @@ public class TipologiaBorsaConverter {
 	return output;
 	
 	}
-	public TipologiaBorsa toDto(TipologiaBorsaDto input) {
+	public TipologiaBorsa toEntity(TipologiaBorsaDto input) {
 		if (input == null) {
 			return null;
 		}

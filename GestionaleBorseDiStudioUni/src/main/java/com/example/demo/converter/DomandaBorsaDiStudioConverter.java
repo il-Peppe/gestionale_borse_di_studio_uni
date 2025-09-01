@@ -1,10 +1,12 @@
 package com.example.demo.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.example.demo.dto.DomandaBorsaDiStudioDto;
 import com.example.demo.entity.DomandaBorsaDiStudio;
 
+@Component
 public class DomandaBorsaDiStudioConverter {
 	
 	@Autowired
@@ -13,7 +15,7 @@ public class DomandaBorsaDiStudioConverter {
 	StudenteConverter studenteConverter;
 	
 	
-	public DomandaBorsaDiStudioDto toEntity(DomandaBorsaDiStudio input) {
+	public DomandaBorsaDiStudioDto toDto(DomandaBorsaDiStudio input) {
 		if (input == null) {
 			return null;
 		}
@@ -21,7 +23,7 @@ public class DomandaBorsaDiStudioConverter {
 		output.setId(input.getId());
 		output.setDataInvio(input.getDataInvio());
 		output.setBorsaDiStudioDto(borsaDiStudioConverter.toEntity(input.getBorsaDiStudio()));
-		output.setStudenteDto(studenteConverter.toEntity(input.getStudente()));
+		output.setStudenteDto(studenteConverter.toDto(input.getStudente()));
 		output.setDataInizioSoggiornoEstero(input.getDataInizioSoggiornoEstero());
 		output.setDataFineSoggiornoEstero(input.getDataFineSoggiornoEstero());
 		output.setUniversitaEstera(input.getUniversitaEstera());
@@ -29,7 +31,7 @@ public class DomandaBorsaDiStudioConverter {
 		
 	}
 	
-	public DomandaBorsaDiStudio toDto(DomandaBorsaDiStudioDto input) {
+	public DomandaBorsaDiStudio toEntity(DomandaBorsaDiStudioDto input) {
 		if (input == null) {
 			return null;
 		}
@@ -37,7 +39,7 @@ public class DomandaBorsaDiStudioConverter {
 		output.setId(input.getId());
 		output.setDataInvio(input.getDataInvio());
 		output.setBorsaDiStudio(borsaDiStudioConverter.toDto(input.getBorsaDiStudioDto()));
-		output.setStudente(studenteConverter.toDto(input.getStudenteDto()));
+		output.setStudente(studenteConverter.toEntity(input.getStudenteDto()));
 		output.setDataInizioSoggiornoEstero(input.getDataInizioSoggiornoEstero());
 		output.setDataFineSoggiornoEstero(input.getDataFineSoggiornoEstero());
 		output.setUniversitaEstera(input.getUniversitaEstera());

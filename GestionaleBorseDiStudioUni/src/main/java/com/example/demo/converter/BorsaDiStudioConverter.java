@@ -1,10 +1,12 @@
 package com.example.demo.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.example.demo.dto.BorsaDiStudioDto;
 import com.example.demo.entity.BorsaDiStudio;
 
+@Component
 public class BorsaDiStudioConverter {
 	
 	@Autowired
@@ -20,7 +22,7 @@ public class BorsaDiStudioConverter {
 		output.setAnnoAccademico(input.getAnnoAccademico());
 		output.setEnteFinanziario(input.getEnteFinanziario());
 		output.setProgramma(input.getProgramma());
-		output.setTipologiaBorsaDto(tipologiaBorsaConverter.toEntity(input.getTipologiaBorsa()));
+		output.setTipologiaBorsaDto(tipologiaBorsaConverter.toDto(input.getTipologiaBorsa()));
 		return output;
 		
 		}
@@ -33,7 +35,7 @@ public class BorsaDiStudioConverter {
 		output.setAnnoAccademico(input.getAnnoAccademico());
 		output.setEnteFinanziario(input.getEnteFinanziario());
 		output.setProgramma(input.getProgramma());
-		output.setTipologiaBorsa(tipologiaBorsaConverter.toDto(input.getTipologiaBorsaDto()));
+		output.setTipologiaBorsa(tipologiaBorsaConverter.toEntity(input.getTipologiaBorsaDto()));
 		return output;
 		
 		}

@@ -1,16 +1,18 @@
 package com.example.demo.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.example.demo.dto.StudenteDto;
 import com.example.demo.entity.Studente;
 
+@Component
 public class StudenteConverter {
 	
 	@Autowired
 	BorsaDiStudioConverter borsaDiStudioConverter;
 	
-	public StudenteDto toEntity(Studente input) {
+	public StudenteDto toDto(Studente input) {
 		if (input == null) {
 			return null;
 		}
@@ -27,7 +29,7 @@ public class StudenteConverter {
 		
 		}
 	
-	public Studente toDto(StudenteDto input) {
+	public Studente toEntity(StudenteDto input) {
 		if (input == null) {
 			return null;
 		}
