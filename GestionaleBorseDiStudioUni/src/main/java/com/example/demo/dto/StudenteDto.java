@@ -47,11 +47,11 @@ public void setId(int id) {
 	this.id = id;
 }
 
-public BorsaDiStudioDto getBorsaDiStudio() {
+public BorsaDiStudioDto getBorsaDiStudioDto() {
 	return borsaDiStudioDto;
 }
 
-public void setBorsaDiStudio(BorsaDiStudioDto borsaDiStudioDto) {
+public void setBorsaDiStudioDto(BorsaDiStudioDto borsaDiStudioDto) {
 	this.borsaDiStudioDto = borsaDiStudioDto;
 }
 

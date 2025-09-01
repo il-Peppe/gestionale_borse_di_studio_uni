@@ -1,16 +1,14 @@
 package com.example.demo.dto;
 
 import java.io.Serializable;
-import java.util.Set;
 
 import com.example.demo.entity.DomandaBorsaDiStudio;
 import com.example.demo.entity.Studente;
-import com.example.demo.entity.TipologiaBorsa;
 
 public class BorsaDiStudioDto implements Serializable {
 	
 	private int id;
-	private TipologiaBorsa tipologiaBorsa;
+	private TipologiaBorsaDto tipologiaBorsaDto;
 	private String programma;
 	private String enteFinanziario;
 	private String annoAccademico;
@@ -27,10 +25,10 @@ public class BorsaDiStudioDto implements Serializable {
 		this.annoAccademico = annoAccademico;
 	}
 	
-	public BorsaDiStudioDto(int id, TipologiaBorsa tipologiaBorsa, String programma, String enteFinanziario,
+	public BorsaDiStudioDto(int id, TipologiaBorsaDto tipologiaBorsaDto, String programma, String enteFinanziario,
 			String annoAccademico, DomandaBorsaDiStudio domandaBorsaDiStudio, Studente studente) {
 		this.id = id;
-		this.tipologiaBorsa = tipologiaBorsa;
+		this.tipologiaBorsaDto = tipologiaBorsaDto;
 		this.programma = programma;
 		this.enteFinanziario = enteFinanziario;
 		this.annoAccademico = annoAccademico;
@@ -46,12 +44,12 @@ public class BorsaDiStudioDto implements Serializable {
 		this.id = id;
 	}
 
-	public TipologiaBorsa getTipologiaBorsa() {
-		return tipologiaBorsa;
+	public TipologiaBorsaDto getTipologiaBorsaDto() {
+		return tipologiaBorsaDto;
 	}
 
-	public void setTipologiaBorsa(TipologiaBorsa tipologiaBorsa) {
-		this.tipologiaBorsa = tipologiaBorsa;
+	public void setTipologiaBorsaDto(TipologiaBorsaDto tipologiaBorsaDto) {
+		this.tipologiaBorsaDto = tipologiaBorsaDto;
 	}
 
 	public String getProgramma() {
@@ -93,8 +91,7 @@ public class BorsaDiStudioDto implements Serializable {
 	public void setStudente(Studente studente) {
 		this.studente = studente;
 	}
-	
-	
+
 	
 
 }
