@@ -7,7 +7,7 @@ import com.example.demo.entity.Studente;
 
 public class BorsaDiStudioDto implements Serializable {
 	
-	private int id;
+	private Integer id;
 	private TipologiaBorsaDto tipologiaBorsaDto;
 	private String programma;
 	private String enteFinanziario;
@@ -18,14 +18,14 @@ public class BorsaDiStudioDto implements Serializable {
 	public BorsaDiStudioDto() {
 	}
 	
-	public BorsaDiStudioDto(int id, String programma, String enteFinanziario, String annoAccademico) {
+	public BorsaDiStudioDto(Integer id, String programma, String enteFinanziario, String annoAccademico) {
 		this.id = id;
 		this.programma = programma;
 		this.enteFinanziario = enteFinanziario;
 		this.annoAccademico = annoAccademico;
 	}
 	
-	public BorsaDiStudioDto(int id, TipologiaBorsaDto tipologiaBorsaDto, String programma, String enteFinanziario,
+	public BorsaDiStudioDto(Integer id, TipologiaBorsaDto tipologiaBorsaDto, String programma, String enteFinanziario,
 			String annoAccademico, DomandaBorsaDiStudio domandaBorsaDiStudio, Studente studente) {
 		this.id = id;
 		this.tipologiaBorsaDto = tipologiaBorsaDto;
@@ -40,7 +40,7 @@ public class BorsaDiStudioDto implements Serializable {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

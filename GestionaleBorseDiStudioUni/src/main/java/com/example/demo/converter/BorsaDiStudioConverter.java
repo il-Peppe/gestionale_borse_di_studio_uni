@@ -13,7 +13,7 @@ public class BorsaDiStudioConverter {
 	TipologiaBorsaConverter tipologiaBorsaConverter;
 	
 	
-	public BorsaDiStudioDto toEntity(BorsaDiStudio input) {
+	public BorsaDiStudioDto toDto(BorsaDiStudio input) {
 		if (input == null) {
 			return null;
 		}
@@ -26,7 +26,7 @@ public class BorsaDiStudioConverter {
 		return output;
 		
 		}
-	public BorsaDiStudio toDto(BorsaDiStudioDto input) {
+	public BorsaDiStudio toEntity(BorsaDiStudioDto input) {
 		if (input == null) {
 			return null;
 		}

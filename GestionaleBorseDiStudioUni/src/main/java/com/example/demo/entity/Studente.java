@@ -23,7 +23,7 @@ public class Studente implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "borsa_di_studio_id", nullable = true)
+	@JoinColumn(name = "borsa_assegnata", nullable = true)
 	private BorsaDiStudio borsaDiStudio;
 	private String nome;
 	private String cognome;

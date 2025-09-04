@@ -24,7 +24,7 @@ public class StudenteConverter {
 		output.setIsee(input.getIsee());
 		output.setMatricola(input.getMatricola());
 		output.setMediaVoti(input.getMediaVoti());
-		output.setBorsaDiStudioDto(borsaDiStudioConverter.toEntity(input.getBorsaDiStudio()));
+		output.setBorsaDiStudioDto(borsaDiStudioConverter.toDto(input.getBorsaDiStudio()));
 		return output;
 		
 		}
@@ -41,7 +41,7 @@ public class StudenteConverter {
 		output.setIsee(input.getIsee());
 		output.setMatricola(input.getMatricola());
 		output.setMediaVoti(input.getMediaVoti());
-		output.setBorsaDiStudio(borsaDiStudioConverter.toDto(input.getBorsaDiStudioDto()));
+		output.setBorsaDiStudio(borsaDiStudioConverter.toEntity(input.getBorsaDiStudioDto()));
 		return output;
 		
 		}

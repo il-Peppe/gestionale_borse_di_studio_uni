@@ -22,7 +22,7 @@ public class DomandaBorsaDiStudioConverter {
 		DomandaBorsaDiStudioDto output = new DomandaBorsaDiStudioDto();
 		output.setId(input.getId());
 		output.setDataInvio(input.getDataInvio());
-		output.setBorsaDiStudioDto(borsaDiStudioConverter.toEntity(input.getBorsaDiStudio()));
+		output.setBorsaDiStudioDto(borsaDiStudioConverter.toDto(input.getBorsaDiStudio()));
 		output.setStudenteDto(studenteConverter.toDto(input.getStudente()));
 		output.setDataInizioSoggiornoEstero(input.getDataInizioSoggiornoEstero());
 		output.setDataFineSoggiornoEstero(input.getDataFineSoggiornoEstero());
@@ -38,7 +38,7 @@ public class DomandaBorsaDiStudioConverter {
 		DomandaBorsaDiStudio output = new DomandaBorsaDiStudio();
 		output.setId(input.getId());
 		output.setDataInvio(input.getDataInvio());
-		output.setBorsaDiStudio(borsaDiStudioConverter.toDto(input.getBorsaDiStudioDto()));
+		output.setBorsaDiStudio(borsaDiStudioConverter.toEntity(input.getBorsaDiStudioDto()));
 		output.setStudente(studenteConverter.toEntity(input.getStudenteDto()));
 		output.setDataInizioSoggiornoEstero(input.getDataInizioSoggiornoEstero());
 		output.setDataFineSoggiornoEstero(input.getDataFineSoggiornoEstero());
