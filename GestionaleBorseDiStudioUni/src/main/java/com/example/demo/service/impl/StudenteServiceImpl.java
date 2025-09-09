@@ -27,7 +27,7 @@ public class StudenteServiceImpl implements StudenteService {
 	@Autowired
 	BorsaDiStudioConverter borsaDiStudioConverter;
 	@Override
-	public StudenteDto getStudenteDtoById(int id) throws Exception {
+	public StudenteDto getStudenteDtoById(Integer id) throws Exception {
 		try {
 			
 			

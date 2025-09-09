@@ -22,7 +22,7 @@ public class StudenteControllerRest {
 	StudenteService studenteService;
 	
 	@GetMapping("/cerca_Studente_con_id/api")
-	public StudenteDto cercaStudente(@RequestParam int id){
+	public StudenteDto cercaStudente(@RequestParam Integer id){
 		try {
 			
 			return studenteService.getStudenteDtoById(id);
@@ -45,6 +45,19 @@ public class StudenteControllerRest {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
 					.body("Errore durante la creazione: " + e.getMessage());
 		}
+	}
+		
+		@PostMapping("/update_Studente/api")
+		public ResponseEntity<String> updateStudente(@RequestBody  StudenteDto studenteDto,
+				 BorsaDiStudioDto borsaDiStudioDto){
+			try {
+				studenteService.updateStudenteDto(studenteDto);
+				return ResponseEntity.ok("Studente aggiunto!");
+				
+			} catch (Exception e) {
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+						.body("Errore durante la creazione: " + e.getMessage());
+			}
 		
 	}
 }

@@ -24,8 +24,7 @@ public class TipologiaBorsa implements java.io.Serializable {
 	private Integer sogliaIsee;
 	private Integer mediaMinima;
 	private String modalitaErogazione;
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "borsa_di_studio", nullable = false)
+	@OneToMany(mappedBy = "tipologiaBorsa", fetch = FetchType.LAZY)
 	private Set<BorsaDiStudio> borsaDiStudios = new HashSet<>();
 
 	public TipologiaBorsa() {

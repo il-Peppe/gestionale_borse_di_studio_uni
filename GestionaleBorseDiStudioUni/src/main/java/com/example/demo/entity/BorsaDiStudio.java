@@ -6,6 +6,7 @@ import java.util.Set;
 
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -25,9 +26,10 @@ public class BorsaDiStudio implements java.io.Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "tipologia_borsa_id", nullable = false)
+	@JoinColumn(name = "tipologia_borsa", nullable = false)
 	private TipologiaBorsa tipologiaBorsa;
 	private String programma;
 	private String enteFinanziario;
@@ -40,11 +42,12 @@ public class BorsaDiStudio implements java.io.Serializable {
 	public BorsaDiStudio() {
 	}
 
-	public BorsaDiStudio(int id, String programma, String enteFinanziario, String annoAccademico) {
+	public BorsaDiStudio(int id, String programma, String enteFinanziario, String annoAccademico, TipologiaBorsa tipologiaBorsa) {
 		this.id = id;
 		this.programma = programma;
 		this.enteFinanziario = enteFinanziario;
 		this.annoAccademico = annoAccademico;
+		this.tipologiaBorsa = tipologiaBorsa;
 	}
 
 	public BorsaDiStudio(int id, TipologiaBorsa tipologiaBorsa, String programma, String enteFinanziario,
